@@ -23,11 +23,11 @@ python main.py --num_epoch 150
 
 
 ## Enviroment
-**- OS: Ubuntu 16.04**
+- OS: Ubuntu 16.04
 
-**- Python 3.5**
+- Python 3.5
 
-**- Tensorflow-gpu version:  1.4.0rc2**
+- Tensorflow-gpu version:  1.4.0rc2
 
 ## Schematic of Network Architecture
 ![사진1](site 주소)
@@ -81,3 +81,30 @@ with tf.control_dependencies(tf.get_collection(tf.GraphKeys.UPDATE_OPS)):
     self.optimization = tf.train.AdamOptimizer(beta1 = 0.5, learning_rate = self.lr_decayed).\
                         minimize(self.loss,global_step = self.global_step)
 ```
+
+**4. Temsorboard Code**
+```python
+self.scalar_to_write = tf.placeholder(tf.float32)
+self.loss_summary = tf.summary.scalar("Loss",self.scalar_to_write)
+self.lr_summary = tf.summary.scalar("learing_rate", self.lr_decayed)
+
+self.writer1 = tf.summary.FileWriter("./logs/total_loss")
+self.writer2 = tf.summary.FileWriter("./logs/entropy_loss")
+self.writer3 = tf.summary.FileWriter("./logs/reg_loss")
+self.writer4 = tf.summary.FileWriter("./logs/lr")
+
+with tf.Session() as sess:
+    sess.run(tf.initialize_all_variables())
+    self.writer3.add_graph(sess.graph)
+    
+    s = sess.run(self.loss_summary, feed_dict = {self.scalar_to_write: loss_total})
+    self.writer1.add_summary(s,global_step = g)
+    
+    s = sess.run(self.loss_summary, feed_dict = {self.scalar_to_write: loss_entro})
+    self.writer2.add_summary(s,global_step = g)
+    
+    s = sess.run(self.loss_summary, feed_dict = {self.scalar_to_write: loss_reg})
+    self.writer3.add_summary(s,global_step = g)
+    
+    s = sess.run(self.lr_summary)
+    self.writer4.add_summary(s,global_step = g)
