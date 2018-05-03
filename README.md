@@ -30,6 +30,7 @@ python main.py --num_epoch 150
 - Tensorflow-gpu version:  1.4.0rc2
 
 ## Schematic of Network Architecture
+
 ![사진1](site 주소)
 
 ## Code
