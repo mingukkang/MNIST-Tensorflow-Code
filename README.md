@@ -60,7 +60,6 @@ self.entropy_loss = tf.reduce_mean(cross_entropy)
 
 total_vars = tf.trainable_variables()
 weights_name_list = [var for var in total_vars if "kernel" in var.name]
-
 loss_holder = []
 for w in range(len(weights_name_list)):
     l2_loss = tf.nn.l2_loss(weights_name_list[w])
