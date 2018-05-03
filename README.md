@@ -57,6 +57,7 @@ self.hypothesis = tf.nn.softmax(self.net)
 
 cross_entropy = tf.nn.softmax_cross_entropy_with_logits(logits = self.net, labels = self.Y)
 self.entropy_loss = tf.reduce_mean(cross_entropy)
+
 total_vars = tf.trainable_variables()
 weights_name_list = [var for var in total_vars if "kernel" in var.name]
 
@@ -65,4 +66,5 @@ for w in range(len(weights_name_list)):
     l2_loss = tf.nn.l2_loss(weights_name_list[w])
     loss_holder.append(l2_loss)
 self.regular_loss = tf.reduce_mean(loss_holder)*lamda
+
 self.loss = self.entropy_loss + self.regular_loss
