@@ -1,2 +1,8 @@
-# MNIST-Tensorflow-Code
-It contains Data Augmentaion, Strided convolution, Batch Normalization, Leaky Relu, Global Average pooling, L2 Regularization,  learning rate decay, He initialization, Tensorboard, Save, Restore 
+## MNIST-Tensorflow 99.xx%
+
+**I Write a Tensorflow code for Classification of MNIST Data.
+
+You can get the results with following command:
+'''
+python main.py --num_epoch 150
+'''
