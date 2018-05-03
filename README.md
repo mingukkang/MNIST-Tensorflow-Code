@@ -108,3 +108,34 @@ with tf.Session() as sess:
     
     s = sess.run(self.lr_summary)
     self.writer4.add_summary(s,global_step = g)
+```
+
+## Augmentation Code
+you can see Full Data Pipe line in data.py
+
+```python
+def augmentation(self,img,augment_size):
+# In this code augment_size = 40, self.load_size = 32
+    seed = random.randint(0,2**31-1)
+    angle = random.randint(-15, 15)
+    radian = angle*(math.pi/180)
+    ori_shape = img.get_shape()
+    p = random.random()
+    if p > 0.75:
+        noise = tf.random_normal(shape = ori_shape, mean =0.0, stddev = 0.2, dtype = tf.float32)
+        img = tf.add(img,noise)
+        
+    # img = tf.image.random_flip_left_right(img,seed = seed)
+    # img = tf.image.random_hue(img, max_delta=0.05)
+    img = tf.image.random_contrast(img, lower = 0.3, upper = 1.0)
+    img = tf.image.random_brightness(img, max_delta = 0.2)
+    # img = tf.image.random_saturation(img,lower = 0.0, upper = 2.0)
+    img = tf.image.resize_images(img, [augment_size,augment_size])
+    img = tf.random_crop(img, ori_shape, seed = seed)
+    img = tf.contrib.image.rotate(img,radian)
+    img = tf.reshape(img, [1,self.load_size,self.load_size,self.channels])
+    img = tf.minimum(img, 1.0)
+    img = tf.maximum(img, 0.0)
+    
+    return img
+```
