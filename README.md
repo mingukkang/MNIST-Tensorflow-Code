@@ -139,9 +139,10 @@ def augmentation(self,img,augment_size):
     
     return img
 ```
+![사진2](https://github.com/MINGUKKANG/MNIST-Tensorflow-Code/blob/master/img/Augmentation.png)
 ## Result
 **1. Loss and Learning rate
-![사진2](site 주소)
+![사진3](site 주소)
 
 **2. Test Accuracy
 ```
