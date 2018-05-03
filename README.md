@@ -148,7 +148,7 @@ def augmentation(self,img,augment_size):
 
 ![사진3](site 주소)
 
-**2. Test Accuracy
+**2. Test Accuracy**
 ```
 
 ```
