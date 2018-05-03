@@ -110,7 +110,7 @@ with tf.Session() as sess:
     self.writer4.add_summary(s,global_step = g)
 ```
 
-## Augmentation Code
+**5. Augmentatioin Code**
 you can see Full Data Pipe line in data.py
 
 ```python
@@ -150,4 +150,5 @@ def augmentation(self,img,augment_size):
 
 ## References
 **1.https://github.com/taki0112/Tensorflow-DatasetAPI**
+
 **2.https://github.com/junmyung/tensorflow_lecture_note_pnu/blob/master/sample_codes/03_conv_layer_cat_dog_classifier.py**
