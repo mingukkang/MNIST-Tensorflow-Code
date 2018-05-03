@@ -67,3 +67,17 @@ for w in range(len(weights_name_list)):
 self.regular_loss = tf.reduce_mean(loss_holder)*lamda
 
 self.loss = self.entropy_loss + self.regular_loss
+```
+
+**2. Learning Rate Decay**
+```python
+self.global_step = tf.Variable(0, trainable=False, name ="global_step")
+self.lr_decayed = lr*decay_rate**(self.global_step/decay_step)
+```
+
+**3. Optimization**
+```python
+with tf.control_dependencies(tf.get_collection(tf.GraphKeys.UPDATE_OPS)):
+    self.optimization = tf.train.AdamOptimizer(beta1 = 0.5, learning_rate = self.lr_decayed).\
+                        minimize(self.loss,global_step = self.global_step)
+```
