@@ -82,7 +82,7 @@ with tf.control_dependencies(tf.get_collection(tf.GraphKeys.UPDATE_OPS)):
                         minimize(self.loss,global_step = self.global_step)
 ```
 
-**4. Temsorboard Code**
+**4. Tensorboard Code**
 ```python
 self.scalar_to_write = tf.placeholder(tf.float32)
 self.loss_summary = tf.summary.scalar("Loss",self.scalar_to_write)
