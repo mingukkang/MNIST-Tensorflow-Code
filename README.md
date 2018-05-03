@@ -111,8 +111,8 @@ with tf.Session() as sess:
 ```
 
 **5. Augmentatioin Code**
-you can see Full Data Pipe line in data.py
 
+you can see Full Data Pipe line in data.py
 ```python
 def augmentation(self,img,augment_size):
 # In this code augment_size = 40, self.load_size = 32
@@ -151,4 +151,4 @@ def augmentation(self,img,augment_size):
 ## References
 **1.https://github.com/taki0112/Tensorflow-DatasetAPI**
 
-**2.https://github.com/junmyung/tensorflow_lecture_note_pnu/blob/master/sample_codes/03_conv_layer_cat_dog_classifier.py**
+**2.https://github.com/junmyung/tensorflow_lecture_note_pnu**
