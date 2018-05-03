@@ -141,13 +141,13 @@ def augmentation(self,img,augment_size):
 ```
 ## Result
 **1. Loss and Learning rate
-<table align='center'>
-<tr align='center'>
-<td> Animation of DCGAN </td>
-<td> DCGAN After 100 Epoch </td>
-</tr>
-<tr>
-<td><img src = 'images/MNIST_Animation.gif' height = '400px'>
-<td><img src = 'images/Mnist_canvas100.png' height = '400px'>
-</tr>
-</table>
+![사진2](site 주소)
+
+**2. Test Accuracy
+```
+
+```
+
+## References
+**1.https://github.com/taki0112/Tensorflow-DatasetAPI**
+**2.https://github.com/junmyung/tensorflow_lecture_note_pnu/blob/master/sample_codes/03_conv_layer_cat_dog_classifier.py**
