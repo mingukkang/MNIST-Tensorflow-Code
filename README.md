@@ -20,3 +20,11 @@ python main.py --num_epoch 150
 5. L2 Regularization Loss, Learning Rate Decay, Adam Optimization with beta1 = 0.5 are used
 
 6. It Contains Codes for Tensorboard, Save, Restore 
+
+
+## Enviroment
+**- OS: Ubuntu 16.04**
+
+**- Python 3.5**
+
+**- Tensorflow-gpu version:  1.4.0rc2**
