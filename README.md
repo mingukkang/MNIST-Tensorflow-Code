@@ -139,3 +139,15 @@ def augmentation(self,img,augment_size):
     
     return img
 ```
+## Result
+**1. Loss and Learning rate
+<table align='center'>
+<tr align='center'>
+<td> Animation of DCGAN </td>
+<td> DCGAN After 100 Epoch </td>
+</tr>
+<tr>
+<td><img src = 'images/MNIST_Animation.gif' height = '400px'>
+<td><img src = 'images/Mnist_canvas100.png' height = '400px'>
+</tr>
+</table>
