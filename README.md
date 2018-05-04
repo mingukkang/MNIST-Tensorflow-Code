@@ -21,6 +21,16 @@ python main.py
 
 6. It Contains Codes for Tensorboard, Save, Restore 
 
+**Warning**
+
+When running code in Windows, you may get the following error:
+```
+Error polling for event status: failed to query event: CUDA_ERROR_ILLEGAL_ADDRESS
+```
+Then You should remove below code in data.py line 95:
+```
+img = tf.contrib.image.rotate(img,radian)
+```
 
 ## Enviroment
 - OS: Ubuntu 16.04
