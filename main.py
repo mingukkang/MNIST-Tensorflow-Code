@@ -9,7 +9,7 @@ if __name__ =="__main__":
     flags.DEFINE_integer("load_size", 32, "size of load image")
     flags.DEFINE_integer("channels", 1, "channel of image")
     flags.DEFINE_integer("multiple", 5, "augmentation multiple")
-    flags.DEFINE_string("depth", "64,128,256,384,512,768", "depth list, ex) 64,128,256,512,768,1024")
+    flags.DEFINE_string("depth", "64,128,256,384,512,768,1024", "depth list, ex) 64,128,256,512,768,1024")
     flags.DEFINE_string("data_container", "./mnist_png", "Data container")
     flags.DEFINE_string("training_dir","./mnist_png/training/","training data directory")
     flags.DEFINE_string("val_dir","./mnist_png/validation/","validation data directory")
