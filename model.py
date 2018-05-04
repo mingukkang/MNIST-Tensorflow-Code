@@ -33,6 +33,7 @@ class CNN:
         net = leaky(bn(conv(net, self.depth[4], name="Conv5"), is_training= self.is_training, name = "bn5"))
         net = leaky(bn(conv(net, self.depth[5], name="Conv6"), is_training= self.is_training, name = "bn6"))
         net = maxpool(net, name = "max_pool3")
+        net = leaky(bn(conv(net, self.depth[6], name="Conv7"), is_training=self.is_training, name="bn7"))
 
         net = tf.reduce_mean(net, axis = (1,2), name ="GAP")
         net = tf.layers.flatten(net)
