@@ -15,7 +15,7 @@ if __name__ =="__main__":
     flags.DEFINE_string("val_dir","./mnist_png/validation/","validation data directory")
     flags.DEFINE_string("test_dir","./mnist_png/testing/","testing data directory")
     flags.DEFINE_float("lamda", 0.05, "lamda value for regularization loss")
-    flags.DEFINE_float("lr",0.0002,"learning_rate")
+    flags.DEFINE_float("lr",0.0001,"learning_rate")
     flags.DEFINE_float("decay_rate",0.95,"learning rate decay rate" )
     flags.DEFINE_integer("decay_step",5000,"learning rate decay step")
     flags.DEFINE_integer("batch_size",128, "batch size of traing data")
