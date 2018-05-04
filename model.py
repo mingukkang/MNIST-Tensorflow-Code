@@ -144,7 +144,7 @@ class CNN:
                 min = int(((time.time() - start_time) - 3600 * hour) / 60)
                 sec = int((time.time() - start_time) - 3600 * hour - 60 * min)
                 print("\nEpoch: %.4d    Time: %d hour %d min %d sec" %(i,hour,min,sec))
-                print("lr: %f   Loss: %.4f    Accuracy_val: %f" % (decayed,loss_total, A), end = "%\n")
+                print("lr: %f   Loss: %.4f    Accuracy_val: %f" % (decayed,loss_total, A), "%\n")
 
                 if ((i % 5 == 0) or (i == (num_epoch -1))):
                     ckpt_path = saver.save(sess,save_dir + "/parameter",i)
@@ -183,7 +183,7 @@ class CNN:
                 hypothesis_holder = np.concatenate(hypothesis_holder, axis = 0)
                 label_holder = np.concatenate(label_holder, axis = 0)
                 A_test = get_Accuracy(hypothesis_holder, label_holder)
-                print("Final Test Accuracy : %f" % (A_test), end ='%\n')
+                print("Final Test Accuracy : %f" % (A_test), '%\n')
 
                 coord.request_stop()
                 coord.join(threads)
