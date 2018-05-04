@@ -31,7 +31,7 @@ python main.py --num_epoch 150
 
 ## Schematic of Network Architecture
 
-![사진1](site 주소)
+![사진1](https://github.com/MINGUKKANG/MNIST-Tensorflow-Code/blob/master/img/Network.PNG)
 
 ## Code
 
