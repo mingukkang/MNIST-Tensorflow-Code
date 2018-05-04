@@ -21,7 +21,14 @@ python main.py
 
 6. It Contains Codes for Tensorboard, Save, Restore 
 
-**Warning**
+## Enviroment
+- OS: Ubuntu 16.04
+
+- Python 3.5
+
+- Tensorflow-gpu version:  1.4.0rc2
+
+## Warning
 
 When running code in Windows, you may get the following error:
 ```
@@ -31,13 +38,6 @@ Then You should remove below code in data.py line 95:
 ```
 img = tf.contrib.image.rotate(img,radian)
 ```
-
-## Enviroment
-- OS: Ubuntu 16.04
-
-- Python 3.5
-
-- Tensorflow-gpu version:  1.4.0rc2
 
 ## Schematic of Network Architecture
 
