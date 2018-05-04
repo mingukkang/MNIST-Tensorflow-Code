@@ -26,7 +26,7 @@ python main.py
 
 - Python 3.5
 
-- Tensorflow-gpu version:  1.4.0rc2
+- Tensorflow-gpu version:  1.4.0rc2(Version above 1.4.0 is required)
 
 ## Warning
 
