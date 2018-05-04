@@ -4,7 +4,7 @@
 
 You can get the results with following command:
 ```
-python main.py --num_epoch 150
+python main.py
 ```
 
 **This code has following features**
