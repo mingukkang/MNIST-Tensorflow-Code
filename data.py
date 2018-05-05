@@ -67,7 +67,7 @@ class ImageData:
 
         print("\nData type: ", name)
         print("Batch size : %d" % (self.new_batch_size))
-        print("Number of Original data: %d\nAugmentation rate: %d" % (len(image_list), (aug_multiple -1)*100), '%\n')
+        print("Number of Original data: %d\nAugmentation rate: %d" % (len(image_list), (aug_multiple -1)*100), '%')
         print("Number of total data: %d" % (self.total_size))
         print("Shape of images = ",self.image_batch.get_shape(), "    Shape of Labels = ", self.label_batch.get_shape())
         print("________________________ Batch is prepared in queue ________________________\n")
