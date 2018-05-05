@@ -22,8 +22,8 @@ class ImageData:
         label_list = []
 
         for i in range(n_classes):
-            img_class = glob(data_dir + class_list[i] + '/*.*') # number of images in a class.
-            image_list += img_class # in the case of Mnist test data set, len(image_list) = 10000
+            img_class = glob(data_dir + class_list[i] + '/*.*') 
+            image_list += img_class 
             for j in range(len(img_class)):
                 label_list += [i]
         images = tf.cast(image_list, tf.string)
