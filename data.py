@@ -43,7 +43,6 @@ class ImageData:
             else:
                 print("Error! Extension of Data is not Png,Jpg or Jpeg!")
 
-
         image = tf.image.resize_images(image, [self.load_size, self.load_size])
         image = tf.cast(image, tf.float32)/255 # whitening
         sub_batch_size = int(self.batch_size/aug_multiple)
