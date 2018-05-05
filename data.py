@@ -73,7 +73,6 @@ class ImageData:
 
         return self.image_batch, self.label_batch
 
-
     def augmentation(self,img,augment_size):
         seed = random.randint(0,2**31-1)
         angle = random.randint(-15, 15)
