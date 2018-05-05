@@ -45,11 +45,12 @@ class ImageData:
 
         image = tf.image.resize_images(image, [self.load_size, self.load_size])
         image = tf.cast(image, tf.float32)/255 # Normalizing
+         mod = self.batch_size % aug_multiple
         sub_batch_size = int(self.batch_size/aug_multiple)
         self.image_batch, self.label_batch = tf.train.batch([image,label],
                                                   batch_size = sub_batch_size,
                                                   num_threads = 8,
-                                                  capacity = self.batch_size*2)
+                                                  capacity = sub_batch_size*2)
 
         if self.augment_flag is True:
             for f in range(aug_multiple - 1):
@@ -58,11 +59,15 @@ class ImageData:
                     aug_img = self.augmentation(self.image_batch[g,:,:,:],augment_size)
                     self.image_batch = tf.concat([self.image_batch,aug_img], axis = 0)
                     self.label_batch = tf.concat([self.label_batch, self.label_batch[g:g+1]], axis =0)
+            
+            if mod !=0:
+                for m in range(mod):
+                    aug_img = self.augmentation(self.image_batch[m],augment_size)
+                    self.image_batch = tf.concat([self.image_batch, aug_img], axis = 0)
+                    self.label_batch = tf.concat([self.label_batch, self.label_batch[m:m+1]], axis = 0)
 
         self.label_batch = tf.one_hot(self.label_batch, depth = 10)
-
         self.total_size = len(image_list)*aug_multiple
-        self.new_batch_size = sub_batch_size*aug_multiple
 
         print("\nData type: ", name)
         print("Batch size : %d" % (self.new_batch_size))
