@@ -18,7 +18,7 @@ if __name__ =="__main__":
     flags.DEFINE_float("lr",0.0001,"learning_rate")
     flags.DEFINE_float("decay_rate",0.95,"learning rate decay rate" )
     flags.DEFINE_integer("decay_step",5000,"learning rate decay step")
-    flags.DEFINE_integer("batch_size",128, "batch size of traing data")
+    flags.DEFINE_integer("batch_size",64, "batch size of traing data")
     flags.DEFINE_integer("num_epoch", 150, "number of epoch for training")
     depth = list(map(int,FLAGS.depth.split(',')))
 
