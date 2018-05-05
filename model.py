@@ -109,7 +109,7 @@ class CNN:
             # self.writer3.add_graph(sess.graph)
             ################### code for Tensorboard ###################
 
-            total_batch = int(self.train_ob.total_size/self.train_ob.new_batch_size)
+            total_batch = int(self.train_ob.total_size/self.train_ob.batch_size)
             image_val, label_val = sess.run([val_xs, val_ys])
 
             print("Start Training!")
@@ -173,7 +173,7 @@ class CNN:
                 saver.restore(sess, self.recent_ckpt_job_path)
                 coord = tf.train.Coordinator()
                 threads = tf.train.start_queue_runners(sess=sess, coord=coord)
-                total_batch = int(test_ob.total_size / test_ob.new_batch_size)
+                total_batch = int(test_ob.total_size / test_ob.batch_size)
 
                 for i in range(total_batch):
                     image_test, label_test = sess.run([test_xs, test_ys])
