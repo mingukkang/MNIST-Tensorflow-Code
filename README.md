@@ -1,4 +1,4 @@
-## MNIST-Tensorflow 99.xx%
+## MNIST-Tensorflow 99.6599%
 
 **I write a Tensorflow code for Classification of MNIST Data.**
 
