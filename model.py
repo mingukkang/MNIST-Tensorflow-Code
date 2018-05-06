@@ -85,7 +85,7 @@ class CNN:
 
             if not os.path.exists(os.getcwd() + save_dir[1:]):
                 os.makedirs(os.getcwd() + save_dir[1:])
-            self.recent_ckpt_job_path = tf.train.latest_checkpoint("saver")
+            self.recent_ckpt_job_path = tf.train.latest_checkpoint("./saver")
 
             if self.recent_ckpt_job_path is not None:
                 sess.run(tf.initialize_all_variables())
