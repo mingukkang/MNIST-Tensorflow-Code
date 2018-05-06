@@ -162,8 +162,7 @@ def augmentation(self,img,augment_size):
 
 **1. Loss and Learning rate**
 
-![사진3](site 주소)
-
+![사진3](https://github.com/MINGUKKANG/MNIST-Tensorflow-Code/blob/master/img/loss.png) ![사진4](https://github.com/MINGUKKANG/MNIST-Tensorflow-Code/blob/master/img/learning_rate.png)
 **2. Test Accuracy**
 ```
 Test Accuracy(Xavier initializer) = 99.6599%
