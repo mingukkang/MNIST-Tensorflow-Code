@@ -35,17 +35,6 @@ def maxpool(input,name):
     net = tf.nn.max_pool(value = input, ksize = [1,2,2,1], strides = [1,2,2,1], padding = "SAME", name = name)
     return net
 
-def strided_conv(inputs,name):
-    net = tf.layers.conv2d(inputs = inputs,
-                           filters = inputs.get_shape()[3],
-                           kernel_size = [3,3],
-                           strides = (2,2),
-                           padding = "SAME",
-                           kernel_initializer = initializer,
-                           name = name,
-                           reuse = tf.AUTO_REUSE)
-    return net
-
 def bn(inputs,is_training,name):
     net = tf.contrib.layers.batch_norm(inputs, decay = 0.9, is_training = is_training, reuse = tf.AUTO_REUSE, scope = name)
     return net
