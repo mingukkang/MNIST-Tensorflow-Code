@@ -160,7 +160,11 @@ def augmentation(self,img,augment_size):
 
 **2. Test Accuracy**
 ```
+Test Accuracy(Xavier initializer) = 99.6599%
+```
 
+```
+Test Accuracy(He initializer) = 99.6500%
 ```
 
 ## References
