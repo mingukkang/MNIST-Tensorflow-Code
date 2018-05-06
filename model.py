@@ -77,11 +77,10 @@ class CNN:
         batch_xs, batch_ys = self.train_ob.get_batch(self.data_dir,aug_multiple = multiple, name = "Training")
         val_ob = ImageData(5000,self.load_size,self.channels,augment_flag = False)
         val_xs, val_ys = val_ob.get_batch(self.val_dir,aug_multiple = 1, name = "Validation")
+        saver = tf.train.Saver()
+        save_dir = "./saver"
 
         with tf.Session() as sess:
-
-            saver = tf.train.Saver()
-            save_dir = "./saver"
 
             if not os.path.exists(os.getcwd() + save_dir[1:]):
                 os.makedirs(os.getcwd() + save_dir[1:])
@@ -166,9 +165,9 @@ class CNN:
         if (test_ob.total_size % batch_size) == 0:
             hypothesis_holder =[]
             label_holder = []
+            saver = tf.train.Saver()
 
             with tf.Session() as sess:
-                saver = tf.train.Saver()
                 sess.run(tf.initialize_all_variables())
                 saver.restore(sess, self.recent_ckpt_job_path)
                 coord = tf.train.Coordinator()
