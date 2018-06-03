@@ -24,3 +24,25 @@ for j in range(length_test):
     path_test = path_test + "/" + str(y_test[j][0])
     print(path_test)
     cv2.imwrite(os.path.join(path_test, str(j) + ".png"), x_test[j])
+    
+    
+import shutil
+import os
+from glob import *
+import random
+
+data_path = "./data"
+train_path = data_path + "/train"
+valid_path = data_path + "/valid"
+class_list = os.listdir(train_path)
+
+num_valid = 5000
+cls_valid = num_valid // len(class_list)
+
+for i in range(len(class_list)):
+    img_class = glob(os.path.join(train_path,class_list[i]) + '/*.*')
+    random.shuffle(img_class)
+    img_class = img_class[0:cls_valid]
+    length = len(img_class)
+    for j in range(length):
+        shutil.move(img_class[j], valid_path +"/" + str(i) +"/" )
